@@ -41,19 +41,17 @@ package by.itstep.javatraining.revision.task;
 
 public class Task01 {
     public static int start(int hour1, int minute1, int second1, int hour2, int minute2, int second2) {
-        if (hour1 < 0 || minute1 < 0 || second1 < 0 || hour2 < 0
-                || minute2 < 0 || second2 < 0) {
+        if (hour1 < 0 || hour1 > 23 || minute1 < 0 || minute1 > 59 || second1 < 0 || second1 > 59
+                || hour2 < 0 || hour2 > 23 || minute2 < 0 || minute2 > 59 || second2 < 0 || second2 > 59) {
             return -1;
         }
 
         int totalSec1 = (hour1 * 60 * 60) + (minute1 * 60) + second1;
         int totalSec2 = (hour2 * 60 * 60) + (minute2 * 60) + second2;
 
-        totalSec1 = totalSec1 < totalSec2 ? totalSec1 : totalSec2;
-        totalSec2 = totalSec1 > totalSec2 ? totalSec1 : totalSec2;
+        int minSec = Math.min(totalSec1, totalSec2);
+        int maxSec = Math.max(totalSec1, totalSec2);
 
-        int res = totalSec2 - totalSec1;
-
-        return res;
+        return maxSec - minSec;
     }
 }
