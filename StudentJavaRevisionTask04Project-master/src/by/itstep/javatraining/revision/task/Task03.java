@@ -36,7 +36,41 @@ package by.itstep.javatraining.revision.task;
  */
 
 public class Task03 {
+    public static final int SEC_IN_DAY = 86400;
+    public static final int SEC_IN_HOUR = 3600;
+    public static final int MIN_IN_HOUR = 60;
+    public static final int SEC_IN_MINUTE = 60;
+    public static final int SINGLE_DIGIT_RES = 10;
+
     public static String start(int number) {
-        return "error";
+        if (number < 0) {
+            return "error";
+        }
+
+        while (number >= SEC_IN_DAY) {
+            number = number - SEC_IN_DAY;
+        }
+
+        StringBuilder builder = new StringBuilder();
+
+        int hour = number / SEC_IN_HOUR;
+
+        builder.append(hour).append(":");
+
+        int minutes = (number % SEC_IN_HOUR) / MIN_IN_HOUR;
+        if (minutes < SINGLE_DIGIT_RES) {
+            builder.append("0").append(minutes).append(":");
+        } else {
+            builder.append(minutes).append(":");
+        }
+
+        int second = number % SEC_IN_MINUTE;
+        if (second < SINGLE_DIGIT_RES) {
+            builder.append("0").append(second);
+        } else {
+            builder.append(second);
+        }
+
+        return builder.toString();
     }
 }
