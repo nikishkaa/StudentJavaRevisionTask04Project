@@ -47,9 +47,7 @@ public class Task03 {
             return "error";
         }
 
-        while (number >= SEC_IN_DAY) {
-            number = number - SEC_IN_DAY;
-        }
+        number = getOneDayTime(number);
 
         StringBuilder builder = new StringBuilder();
 
@@ -72,5 +70,13 @@ public class Task03 {
         }
 
         return builder.toString();
+    }
+
+    private static int getOneDayTime(int number) {
+        while (number >= SEC_IN_DAY) {
+            number = number - SEC_IN_DAY;
+        }
+
+        return number;
     }
 }
