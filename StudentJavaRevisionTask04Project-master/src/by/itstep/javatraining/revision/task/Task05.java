@@ -27,6 +27,23 @@ package by.itstep.javatraining.revision.task;
 
 public class Task05 {
     public static String start(int a, int b, int c) {
-        return "";
+        if (a > b) {
+            int t = a;
+            a = b;
+            b = t;
+        }
+
+        if (b > c) {
+            int t = b;
+            b = c;
+            c = t;
+        }
+        if (a > b) {
+            int t = a;
+            a = b;
+            b = t;
+        }
+
+        return a + " " + b + " " + c;
     }
 }
