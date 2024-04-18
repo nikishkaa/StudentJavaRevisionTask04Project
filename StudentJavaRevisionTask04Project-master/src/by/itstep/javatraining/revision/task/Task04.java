@@ -41,6 +41,20 @@ package by.itstep.javatraining.revision.task;
 
 public class Task04 {
     public static int start(int n, int m, int x, int y) {
-        return -1;
+        if (n <= 0 || m <= 0 || x < 0 || y < 0) {
+            return -1;
+        }
+
+        if (m > n) {
+            int t = m;
+            m = n;
+            n = t;
+        }
+
+        int minX = Math.min(x, m - x);
+        int minY = Math.min(y, n - y);
+
+
+        return Math.min(minX, minY);
     }
 }
