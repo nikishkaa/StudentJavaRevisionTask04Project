@@ -38,6 +38,48 @@ package by.itstep.javatraining.revision.task;
 
 public class Task06 {
     public static boolean start(int x, int y, int z, int a, int b, int c) {
-        return false;
+        if (x <= 0 || y <= 0 || z <= 0 || a <= 0 || b <= 0 || c <= 0) {
+            return false;
+        }
+
+        if (a > b) {
+            int t = a;
+            a = b;
+            b = t;
+        }
+
+        if (b > c) {
+            int t = b;
+            b = c;
+            c = t;
+        }
+        if (a > b) {
+            int t = a;
+            a = b;
+            b = t;
+        }
+
+        if (x > y) {
+            int t = x;
+            x = y;
+            y = t;
+        }
+
+        if (y > z) {
+            int t = y;
+            y = z;
+            z = t;
+        }
+        if (x > y) {
+            int t = x;
+            x = y;
+            y = t;
+        }
+
+        boolean size = false;
+
+        size = a >= x && b >= y && c >= z;
+
+        return size;
     }
 }
