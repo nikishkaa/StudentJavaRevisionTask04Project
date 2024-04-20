@@ -37,9 +37,6 @@ package by.itstep.javatraining.revision.task;
  *	[output 5]: 0
  */
 
-import org.apache.log4j.Logger;
-
-import static by.itstep.javatraining.revision.controller.Main.LOGGER;
 
 public class TaskX {
     public static final int MKAD_S = 56;
