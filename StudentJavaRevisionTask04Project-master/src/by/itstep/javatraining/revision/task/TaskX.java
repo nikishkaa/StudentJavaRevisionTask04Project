@@ -37,8 +37,31 @@ package by.itstep.javatraining.revision.task;
  *	[output 5]: 0
  */
 
+import org.apache.log4j.Logger;
+
+import static by.itstep.javatraining.revision.controller.Main.LOGGER;
+
 public class TaskX {
+    public static final int MKAD_S = 56;
+
     public static int start(int v, int t) {
-        return -1;
+        if (t < 0) {
+            return -1;
+        }
+
+        int s = 0;
+
+        if (v > 0) {
+            s = v * t;
+            s = s > MKAD_S ? s % MKAD_S : s;
+        }
+
+        if (v < 0) {
+            int temp = v * t * -1;
+            temp = temp > MKAD_S ? temp % MKAD_S : temp;
+            s = MKAD_S - temp;
+        }
+
+        return s;
     }
 }
