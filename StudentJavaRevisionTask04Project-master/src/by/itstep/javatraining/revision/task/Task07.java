@@ -47,6 +47,12 @@ package by.itstep.javatraining.revision.task;
 
 public class Task07 {
     public static String start(int a1, int b1, int c1, int a2, int b2, int c2) {
+        if (a1 <= 0 || b1 <= 0 || c1 <= 0 || a2 <= 0 || b2 <= 0 || c2 <= 0) {
+            return "Error.";
+        }
+
+
+
         return "";
     }
 }
