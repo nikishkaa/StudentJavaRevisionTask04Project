@@ -76,10 +76,6 @@ public class Task06 {
             y = t;
         }
 
-        boolean size = false;
-
-        size = a >= x && b >= y && c >= z;
-
-        return size;
+        return a >= x && b >= y && c >= z;
     }
 }
