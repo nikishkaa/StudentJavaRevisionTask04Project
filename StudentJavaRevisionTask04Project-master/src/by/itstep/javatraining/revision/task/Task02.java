@@ -37,20 +37,12 @@ package by.itstep.javatraining.revision.task;
  *	[output 5]: 0
  */
 public class Task02 {
-    public static final int PEOPLE_ONE_TABLE = 2;
 
     public static int start(int a, int b, int c) {
         if (a <= 0 || b <= 0 || c <= 0) {
             return 0;
         }
 
-        int tableFirst = a % PEOPLE_ONE_TABLE == 0
-                ? a / PEOPLE_ONE_TABLE : a / PEOPLE_ONE_TABLE + 1;
-        int tableSec = b % PEOPLE_ONE_TABLE == 0
-                ? b / PEOPLE_ONE_TABLE : b / PEOPLE_ONE_TABLE + 1;
-        int tableThird = c % PEOPLE_ONE_TABLE == 0
-                ? c / PEOPLE_ONE_TABLE : c / PEOPLE_ONE_TABLE + 1;
-
-        return tableFirst + tableSec + tableThird;
+        return a / 2 + b / 2 + c / 2 + (a % 2) + (b % 2) + (c % 2);
     }
 }
